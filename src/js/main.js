@@ -10,11 +10,11 @@ let count = ""
 
 NUM_BUTTONS.forEach(function(button) {
     button.addEventListener("click",function() {
-        if (count == "") {
+        if (count == "" || count == "error") {
             count = button.innerHTML
-        } else if(count != "error"){
+        } else {
             count += button.innerHTML
-        }
+        } 
 
         SHOW_TAB.innerHTML = count 
     })
