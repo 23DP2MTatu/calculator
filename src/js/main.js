@@ -8,6 +8,8 @@ const SHOW_TAB = document.getElementById("show-tab")
 let blacklist = ["*","/","+","-"]
 let count = ""
 
+
+
 NUM_BUTTONS.forEach(function(button) {
     button.addEventListener("click",function() {
         if (count == "" || count == "error") {
@@ -41,6 +43,8 @@ RAV_BUTTON.addEventListener("click",function() {
     count = eval(count)
     if (count == Infinity) {
         count = "error"
+    } else if (typeof(count) == typeof(1)) {
+
     }
-    SHOW_TAB.innerHTML = count
+    SHOW_TAB.innerHTML = Math.round(count*10000000000)/10000000000
 })
