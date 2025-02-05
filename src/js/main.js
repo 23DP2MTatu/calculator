@@ -43,8 +43,7 @@ RAV_BUTTON.addEventListener("click",function() {
     count = eval(count)
     if (count == Infinity) {
         count = "error"
-    } else if (typeof(count) == typeof(1)) {
-
     }
     SHOW_TAB.innerHTML = Math.round(count*10000000000)/10000000000
+    count = String(count)
 })
