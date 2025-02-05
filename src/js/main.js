@@ -12,7 +12,7 @@ let count = ""
 
 NUM_BUTTONS.forEach(function(button) {
     button.addEventListener("click",function() {
-        if (count == "" || count == "error") {
+        if (count == "" || count == "Error") {
             count = button.innerHTML
         } else {
             count += button.innerHTML
@@ -29,10 +29,10 @@ CLR_BUTTON.addEventListener("click",function() {
 
 SYM_BUTTONS.forEach(function(button) {
     button.addEventListener("click",function() {
-        if (blacklist.includes(count.charAt(count.length-1)) != true && count != "error") {
+        if (blacklist.includes(count.charAt(count.length-1)) != true && count != "Error") {
             count += button.innerHTML
             SHOW_TAB.innerHTML = count
-        } else if(count != "error") {
+        } else if(count != "Error") {
             count = count.slice(0,-1) + button.innerHTML
             SHOW_TAB.innerHTML = count
         }
@@ -42,8 +42,12 @@ SYM_BUTTONS.forEach(function(button) {
 RAV_BUTTON.addEventListener("click",function() {
     count = eval(count)
     if (count == Infinity) {
-        count = "error"
+        count = "Error"
+        SHOW_TAB.innerHTML = count
+    } else if (count == undefined) {
+        SHOW_TAB.innerHTML = 0
+    } else {
+        SHOW_TAB.innerHTML = Math.round(count*10000000000)/10000000000
     }
-    SHOW_TAB.innerHTML = Math.round(count*10000000000)/10000000000
     count = String(count)
 })
