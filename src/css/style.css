@@ -20,6 +20,16 @@
     border-radius: 20px;
 }
 
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+footer img {
+    height: 100px;
+}
+
 .buttons {
     background-color: #3b3b3b;
     height: 100px;
