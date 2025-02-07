@@ -50,4 +50,8 @@ RAV_BUTTON.addEventListener("click",function() {
         SHOW_TAB.innerHTML = Math.round(count*10000000000)/10000000000
     }
     count = String(count)
+
+    if(count == 1488) {
+        window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    }
 })
