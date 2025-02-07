@@ -6,13 +6,13 @@ const RAV_BUTTON = document.getElementById("button-rav")
 const SHOW_TAB = document.getElementById("show-tab")
 
 let blacklist = ["*","/","+","-"]
-let count = ""
+let count = "0"
 
 
 
 NUM_BUTTONS.forEach(function(button) {
     button.addEventListener("click",function() {
-        if (count == "" || count == "Error") {
+        if (count == "Error" || count == 0) {
             count = button.innerHTML
         } else {
             count += button.innerHTML
@@ -23,7 +23,7 @@ NUM_BUTTONS.forEach(function(button) {
 })
 
 CLR_BUTTON.addEventListener("click",function() {
-    count = ""
+    count = "0"
     SHOW_TAB.innerHTML = count
 })
 
